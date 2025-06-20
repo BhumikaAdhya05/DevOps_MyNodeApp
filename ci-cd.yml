@@ -1,0 +1,37 @@
+name: Node.js CI/CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build (Optional)
+      run: echo "No build step for now"
+
+    - name: Deploy (Optional placeholder)
+      run: echo "Deploy step goes here"
+
+    - name: Send Slack Notification
+      uses: slackapi/slack-github-action@v1.24.0
+      with:
+        payload: '{"text":"✅ Node.js App CI/CD completed successfully!"}'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
