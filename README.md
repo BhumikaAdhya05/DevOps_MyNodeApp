@@ -23,20 +23,6 @@ This project sets up a CI/CD pipeline using GitHub Actions to automate testing a
 
 ---
 
-## 📁 Project Structure
-
----MyNodeApp/
-├── .github/
-│ └── workflows/
-│ └── ci-cd.yml # GitHub Actions pipeline
-├── Procfile # Tells Heroku how to start the app
-├── index.js # Main application file
-├── package.json # Project metadata & scripts
-└── README.md
-
-
----
-
 ## 🧪 Test Script (Temporary)
 
 The `test` script is currently a placeholder to ensure the pipeline passes:
