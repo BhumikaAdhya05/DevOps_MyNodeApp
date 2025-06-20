@@ -29,9 +29,3 @@ jobs:
     - name: Deploy (Optional placeholder)
       run: echo "Deploy step goes here"
 
-    - name: Send Slack Notification
-      uses: slackapi/slack-github-action@v1.24.0
-      with:
-        payload: '{"text":"✅ Node.js App CI/CD completed successfully!"}'
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
